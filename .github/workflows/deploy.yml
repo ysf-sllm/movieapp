@@ -41,8 +41,10 @@ jobs:
           fi
           npm run build -- --base-href="$BASE_HREF"
 
-      - name: Add GitHub Pages fallback for Angular routes
-        run: cp dist/movieapp/browser/index.html dist/movieapp/browser/404.html
+      - name: Prepare Angular app for GitHub Pages
+        run: |
+          cp dist/movieapp/browser/index.csr.html dist/movieapp/browser/index.html
+          cp dist/movieapp/browser/index.html dist/movieapp/browser/404.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
