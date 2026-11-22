@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="search-container">
+        <label for="title">Title</label>
+        <input type="text" id="title" placeholder="e.g : Dexter" #movieTitle
+            (input)="getMovieByTitle(movieTitle.value)" />
+        <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+    </div>
+</div>
